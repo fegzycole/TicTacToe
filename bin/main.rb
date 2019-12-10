@@ -10,6 +10,7 @@ game_won = false
 board = 1
 
 while board <= 9
+  puts 'Player X turn'
   puts 'Player X select a number from 1 to 9' # prompts player X to pick a position
   option_selected = gets.chomp # player X enters his/her input
 
@@ -36,6 +37,7 @@ while board <= 9
 
   board += 1
 
+  puts 'Player O turn'
   puts 'Player O select a number from 1 to 9' # prompts player O to pick a position
   option_selected = gets.chomp # player O enters his/her input
 
