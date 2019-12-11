@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require './lib/board'
-require './lib/validation'
+require_relative '../lib/board'
+require_relative '../lib/validation'
 
 tictactoe = Board.new
 validation = Validation.new
