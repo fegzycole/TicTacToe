@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Board
+  attr_reader :board
+
   def initialize
     @board = %w[
       _ _ _
@@ -20,15 +22,28 @@ class Board
   end
 
   def update_board(item, position)
-    @board[position] = item
+    @board[position.to_i - 1] = item
   end
 
-  def check_winning_combination
+  def full?
+    return false if board_empty?
+
+    true
+  end
+
+  def player_won?
     @winning_combinations.each do |array|
       first = array[0]
       second = array[1]
       third = array[2]
       return true if @board[first] == @board[second] && @board[first] == @board[third] && @board[first] != '_'
     end
+    false
+  end
+
+  private
+
+  def board_empty?
+    board.any? '_'
   end
 end

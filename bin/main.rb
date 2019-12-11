@@ -1,64 +1,44 @@
 #!/usr/bin/env ruby
 
-# Array of valid positions that a player can take
-valid_options = %w[1 2 3 4 5 6 7 8 9]
+require './lib/board'
+require './lib/validation'
 
-selected_positions = []
+tictactoe = Board.new
+validation = Validation.new
 
-game_won = false
+def print_board(tictactoe)
+  i = 0
+  while i < tictactoe.board.size
+    p tictactoe.board[i..i + 2]
+    i += 3
+  end
+end
 
-board = 1
+def player_move(player_item, validation, board)
+  puts "Player #{player_item} turn"
+  puts "Player #{player_item} select a number from 1 to 9"
+  option_selected = gets.chomp
 
-while board <= 9
-  puts 'Player X turn'
-  puts 'Player X select a number from 1 to 9' # prompts player X to pick a position
-  option_selected = gets.chomp # player X enters his/her input
-
-  # we check to see if the input supplied is among the valid options
-  # If it isn't, we continue with the loop
-  until valid_options.include?(option_selected) && !selected_positions.include?(option_selected)
-    puts 'Ensure you put in a number between 1 to 9 and make sure it hasn\'t been selected' # prompts player X to pick a valid number
-    option_selected = gets.chomp # player X enters his/her input until all checks pass
+  until validation.check_valid_input(option_selected)
+    puts 'Ensure you put in a number between 1 to 9 and make sure it hasn\'t been selected'
+    option_selected = gets.chomp
   end
 
-  puts "The board has now been updated, player X played at position #{option_selected}"
+  board.update_board(player_item, option_selected)
 
-  # update the selected positions array with the option selected
-  selected_positions.push(option_selected)
+  validation.update_selected_options(option_selected)
 
-  # display the updated board
-  puts 'The board is displayed'
+  print_board(board)
+end
 
-  # We check to see if player x has won
-  # game_won will return true if we have a winner, ending the game
-  return puts 'Player X has won the game' if game_won
+until tictactoe.full?
+  player_move('X', validation, tictactoe)
 
-  return puts 'The game has ended in draw' if board == 9
+  return puts 'Player X has won the game' if tictactoe.player_won?
 
-  board += 1
+  return puts 'The game has ended in a draw' if tictactoe.full?
 
-  puts 'Player O turn'
-  puts 'Player O select a number from 1 to 9' # prompts player O to pick a position
-  option_selected = gets.chomp # player O enters his/her input
+  player_move('O', validation, tictactoe)
 
-  # we check to see if the input supplied is among the valid options
-  # If it isn't, we continue with the loop
-  until valid_options.include?(option_selected) && !selected_positions.include?(option_selected)
-    puts 'Ensure you put in a number between 1 to 9 and make sure it hasn\'t been selected' # prompts player O to pick a valid number
-    option_selected = gets.chomp # player O enters his/her input
-  end
-
-  puts "The board has now been updated, player O played at position #{option_selected}"
-
-  # update the selected positions array with the option selected
-  selected_positions.push(option_selected)
-
-  # display the updated board
-  puts 'The board is displayed'
-
-  # We check to see if player x has won
-  # game_won will return true if we have a winner, ending the game
-  return puts 'Player O has won the game' if game_won
-
-  board += 1
+  return puts 'Player O has won the game' if tictactoe.player_won?
 end
