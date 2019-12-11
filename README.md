@@ -5,7 +5,7 @@
  
   <h3 align="center">Tic Tac Toe Application</h3>
   <p align="center">
-    A Ruby collaborative project
+    A Ruby collaborative project by Josue Brigido and Ferguson Iyara
     <br />
     <a href="https://github.com/fegzycole/TicTacToe/tree/feature-developer"><strong>Explore the docs »</strong></a>
     <br />
@@ -32,30 +32,49 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-In this project, We are expected to build a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
+
+In this project, we built a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
 ### Objective
- - To get a better understanding of OOP concepts
+
+ -Getting experience with OOP concepts in Ruby
  
-### Assignment:
+### Assignment
+
 Full requeriments for the practice are in [here](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
-
 ### Built With
+
 This project was built using Ruby. 
 
+## Prerequisites
+ - Git
+ - Ruby
 
-<!-- USAGE EXAMPLES -->
-## Prerequisite
-  - Git
-  - Ruby
 
-## Rules Of The Game
-  - Player X begins the game
-  - Each player can only pick a postion on the board from 1 - 9
-  - Each player can only pick a position that hasn't been picked
+## Getting Started
 
-The use of the code is for sorting arrays of numbers and strings using the bubble sort algorithm.
+- git clone https://github.com/fegzycole/TicTacToe.git
+
+- cd TicTacToe
+
+- Type **bin/main.rb** in your terminal to run the executable
+
+
+## Rules
+1. THe game can only be played by 2 players (Player X and Player O)
+
+2. Player X begins the game
+
+3. Each player can only take one position at a time
+
+4. Each player can only pick a position between 1 - 9
+
+5. Each player can only pick a position that has not been picked previously
+
+6. A player wins if three cells in the board match either horizontally, vertically or diagonally
+
+7. The game comes to a draw if all cells in the board have been exhausted and there still is no winner.
 
 
 <!-- ROADMAP -->
