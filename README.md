@@ -3,9 +3,9 @@
 <br />
 <p align="center">
  
-  <h3 align="center">Bubble sort</h3>
+  <h3 align="center">Tic Tac Toe Application</h3>
   <p align="center">
-    First Ruby collaborative project
+    A Ruby collaborative project
     <br />
     <a href="https://github.com/fegzycole/TicTacToe/tree/feature-developer"><strong>Explore the docs »</strong></a>
     <br />
@@ -32,16 +32,13 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This is the first Ruby collaborative project, a code to bubble sort the values
+In this project, We are expected to build a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
 ### Objective
- -Getting experience with Ruby
- -Understanding loops and arrays
+ - To get a better understanding of OOP concepts
  
 ### Assignment:
-Full requeriments for the practice are in [here](https://www.theodinproject.com/courses/ruby-programming/lessons/advanced-building-blocks)
-
-
+Full requeriments for the practice are in [here](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 
 ### Built With
@@ -49,7 +46,14 @@ This project was built using Ruby.
 
 
 <!-- USAGE EXAMPLES -->
-## Use
+## Prerequisite
+  - Git
+  - Ruby
+
+## Rules Of The Game
+  - Player X begins the game
+  - Each player can only pick a postion on the board from 1 - 9
+  - Each player can only pick a position that hasn't been picked
 
 The use of the code is for sorting arrays of numbers and strings using the bubble sort algorithm.
 
