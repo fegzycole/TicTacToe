@@ -25,4 +25,11 @@ describe Validation do
       expect(validation.check_valid_input('2')).to eql(false)
     end
   end
+
+  describe '#update_selected_options' do
+    it 'should update the array containing the selected options when a user picks a position' do
+      validation.update_selected_options('2')
+      expect(validation.selected_positions[0]).to eql('2')
+    end
+  end
 end
