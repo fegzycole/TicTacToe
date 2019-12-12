@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/board'
 require './lib/validation'
 
@@ -24,7 +26,7 @@ describe Board do
       tictactoe.update_board('X', 9)
       expect(tictactoe.full?).to eql(true)
     end
-    
+
     it 'returns false if the board is empty' do
       expect(tictactoe.full?).to eql(false)
     end
@@ -91,5 +93,4 @@ describe Board do
       expect(tictactoe.player_won?).to eql(false)
     end
   end
-
 end
