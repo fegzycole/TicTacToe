@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/validation'
+require_relative '../lib/validation'
 
 describe Validation do
   let(:validation) { Validation.new }

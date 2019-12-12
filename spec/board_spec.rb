@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './lib/board'
-require './lib/validation'
+require_relative '../lib/board'
+require_relative '../lib/validation'
 
 describe Board do
   let(:tictactoe) { Board.new }
