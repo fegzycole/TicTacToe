@@ -89,7 +89,16 @@ describe Board do
       expect(tictactoe.player_won?).to eql(true)
     end
 
-    it 'returns false if no one has won' do
+    it 'returns false if the game ends in a draw' do
+      tictactoe.update_board('X', 1)
+      tictactoe.update_board('O', 2)
+      tictactoe.update_board('X', 3)
+      tictactoe.update_board('O', 4)
+      tictactoe.update_board('X', 5)
+      tictactoe.update_board('X', 6)
+      tictactoe.update_board('O', 7)
+      tictactoe.update_board('X', 8)
+      tictactoe.update_board('O', 9)
       expect(tictactoe.player_won?).to eql(false)
     end
   end
