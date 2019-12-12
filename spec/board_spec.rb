@@ -4,9 +4,9 @@ require './lib/validation'
 describe Board do
   let(:tictactoe) { Board.new }
 
-  describe "#update_board" do
+  describe '#update_board' do
     it 'updates the position 1 with an X' do
-      tictactoe.update_board("X", 1)
+      tictactoe.update_board('X', 1)
       expect(tictactoe.board[0]).to eql('X')
     end
   end
